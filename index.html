@@ -32,58 +32,67 @@
             <div class="form-holder">
                 <div class="form-content">
                     <div class="form-items">
-                        <form>
+                        <form id="registrationForm">
                             <div class="row">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="First name">
+                                    <input type="text" id="firstName" class="form-control" placeholder="First name">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="Last name">
+                                    <input type="text" id="lastName" class="form-control" placeholder="Last name">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="Gender">
+                                    <select id="gender" name="gender" class="form-control">
+                                        <option selected disabled>Gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="Contact(Prefferably WHATSAPP NUMBER)">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="Local Church">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="Zone">
+                                    <input type="text" id="contact" class="form-control" placeholder="Contact(Prefferably WHATSAPP NUMBER)">
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="Area">
+                                    <input type="text" id="localChurch" class="form-control" placeholder="Local Church">
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control" placeholder="Not GEWC Specify">
+                                    <input type="text" id="zone" class="form-control" placeholder="Zone">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" id="area" class="form-control" placeholder="Area">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" id="denomination" class="form-control" placeholder="Not GEWC Specify">
                                 </div>
                             </div> 
                             <div class="row">
                                 <div class="col-12">
-                                    <textarea class="form-control" placeholder="How did you hear about GOTP"></textarea>
+                                    <textarea id="response" class="form-control" placeholder="How did you hear about GOTP"></textarea>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12 col-sm-6">
-                                    <input type="checkbox" id="chk1" required ><label for="chk1">Do you want to Volunteer? </label>
+                                    <select id="volunteer" name="volunteer" class="form-control">
+                                        <option selected disabled>Do you want to Volunteer?</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <select id="cars" name="cars" class="form-control">
-                                        <option value="volvo">Music</option>
-                                        <option value="saab">Technical</option>
-                                        <option value="mercedes">Sanitation</option>
-                                        <option value="audi">Security</option>
-                                        <option value="volvo">Media</option>
-                                        <option value="saab">Accomodation</option>
-                                        <option value="mercedes">Welfare</option>
-                                        <option value="audi">Sports</option>
+                                    <select id="department" name="department" class="form-control">
+                                        <option selected disabled>Select Unit to Volunteer</option>
+                                        <option value="music">Music</option>
+                                        <option value="technical">Technical</option>
+                                        <option value="sanitation">Sanitation</option>
+                                        <option value="security">Security</option>
+                                        <option value="media">Media</option>
+                                        <option value="accomodation">Accomodation</option>
+                                        <option value="welfare">Welfare</option>
+                                        <option value="sports">Sports</option>
                                     </select>
                                     <br>
                                 </div>
@@ -100,7 +109,7 @@
             </div>
         </div>
     </div>
-<script src="js/jquery.min.js"></script>
+<script src="js/jQuery.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/main.js"></script>
