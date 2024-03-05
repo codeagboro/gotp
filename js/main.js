@@ -1,26 +1,40 @@
-"use strict"
 
-$(window).on("load", function() {
-    $('.btn-forget').on('click',function(e){
-        e.preventDefault();
-        var inputField = $(this).closest('form').find('input');
-        if(inputField.attr('required') && inputField.val()){
-            $('.error-message').remove();
-            $('.form-items','.form-content').addClass('hide-it');
-            $('.form-sent','.form-content').addClass('show-it');
-        }else{
-            $('.error-message').remove();
-            $('<small class="error-message">Please fill the field.</small>').insertAfter(inputField);
-        }
+document.getElementById('registrationForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
 
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const gender = document.getElementById('gender').value;
+    const contact = document.getElementById('contact').value;
+    const localChurch = document.getElementById('firstName').value;
+    const zone = document.getElementById('zone').value;
+    const area = document.getElementById('area').value;
+    const enquiry = document.getElementById('response').value;
+    const volunteer = document.getElementById('volunteer').value;
+    const department = document.getElementById('department').value;
+
+    const regResponse = await fetch('https://gotp.onrender.com/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            first_name: firstName,
+            last_name: lastName,
+            gender: gender,
+            phone: contact,
+            localChurch: localChurch,
+            zone: zone,
+            area: area,
+            response: enquiry,
+            volunteer: volunteer,
+            department: department
+        })
     });
-    
-    $('.btn-tab-next').on('click',function(e){
-        e.preventDefault();
-        $('.nav-tabs .nav-item > .active').parent().next('li').find('a').trigger('click');
-    });
-    $('.custom-file input[type="file"]').on('change', function(){
-        var filename = $(this).val().split('\\').pop();
-        $(this).next().text(filename);
-    });
-});
+    if (!regResponse.ok) {
+        throw new Error(`HTTP error! status: ${regResponse.status}`);
+    } else {
+        alert("Registration Successful!");
+        window.location.href = "index.html";
+    };
+})
