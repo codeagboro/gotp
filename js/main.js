@@ -1,4 +1,5 @@
 
+
 document.getElementById('registrationForm').addEventListener('submit', async (e) => {
     e.preventDefault();
 
